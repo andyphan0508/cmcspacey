@@ -24,6 +24,12 @@ export default {
           '50%': { transform: 'translateY(-12px)' },
         },
       },
+      boxShadow: {
+        'cyan-glow': '0 0 25px rgba(6, 182, 212, 0.15)',
+        'indigo-glow': '0 0 25px rgba(99, 102, 241, 0.15)',
+        'violet-glow': '0 0 25px rgba(139, 92, 246, 0.15)',
+        'premium': '0 10px 40px -10px rgba(0, 0, 0, 0.04), 0 0 20px rgba(6, 182, 212, 0.05)',
+      },
     },
   },
   plugins: [],
