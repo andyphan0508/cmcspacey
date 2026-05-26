@@ -8,57 +8,65 @@
 }
 
 body {
-  font-family: 'Inter', sans-serif;
-  background-color: #f8fafc;
-  color: #0f172a;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background-color: #030712;
+  color: #f1f5f9;
   overflow-x: hidden;
 }
 
-/* Custom scrollbar - Clean light theme styling */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Space Grotesk', sans-serif;
+  letter-spacing: -0.02em !important;
+}
+
+/* Custom scrollbar - Premium dark theme styling */
 ::-webkit-scrollbar {
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #f1f5f9;
+  background: #0b0f19;
 }
 ::-webkit-scrollbar-thumb {
-  background: #cbd5e1;
+  background: #1f2937;
   border-radius: 4px;
-  border: 2px solid #f1f5f9;
+  border: 2px solid #0b0f19;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #94a3b8;
+  background: #374151;
 }
 
-/* Glassmorphism styling - Bright, premium glass */
+/* Glassmorphism styling - Sleek Dark Glass */
 .glass-panel {
-  background: rgba(255, 255, 255, 0.7);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.6);
+  background: rgba(10, 15, 30, 0.45);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.07);
   box-shadow: 
-    0 10px 30px -10px rgba(0, 0, 0, 0.04),
-    0 1px 3px rgba(0, 0, 0, 0.02);
+    0 15px 35px -15px rgba(0, 0, 0, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
 }
 
 .glass-panel-hover {
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .glass-panel-hover:hover {
-  background: rgba(255, 255, 255, 0.85);
-  border-color: rgba(6, 182, 212, 0.25);
+  background: rgba(15, 23, 42, 0.65);
+  border-color: rgba(6, 182, 212, 0.3);
   transform: translateY(-4px);
   box-shadow: 
-    0 20px 40px -15px rgba(6, 182, 212, 0.12),
-    0 0 20px rgba(6, 182, 212, 0.02);
+    0 25px 50px -20px rgba(6, 182, 212, 0.2),
+    0 0 30px rgba(6, 182, 212, 0.04);
 }
 
-/* Glow utilities optimized for light mode */
+/* Glowing utilities optimized for Dark Mode */
 .glow-cyan {
-  box-shadow: 0 0 40px rgba(6, 182, 212, 0.08);
+  box-shadow: 0 0 40px rgba(6, 182, 212, 0.12);
 }
-.glow-violet {
-  box-shadow: 0 0 40px rgba(139, 92, 246, 0.08);
+.glow-gold {
+  box-shadow: 0 0 40px rgba(234, 179, 8, 0.1);
+}
+.glow-indigo {
+  box-shadow: 0 0 40px rgba(99, 102, 241, 0.12);
 }
 
 /* Section fade-in animation */
@@ -74,20 +82,27 @@ body {
 
 /* Gradient text with deep contrast */
 .gradient-text {
-  background: linear-gradient(135deg, #0284c7, #4f46e5, #7c3aed);
+  background: linear-gradient(135deg, #22d3ee, #6366f1, #eab308);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
-/* Soft glowing orb representing satellite/planet theme in light mode */
+.gradient-text-gold {
+  background: linear-gradient(135deg, #fef08a, #eab308, #ca8a04);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Glowing Space Orb representing satellite/planet theme in dark mode */
 .planet {
-  background: radial-gradient(circle at 35% 35%, #ffffff, #e0f2fe 50%, #bae6fd 85%, #0284c7);
+  background: radial-gradient(circle at 35% 35%, #ffffff 0%, #38bdf8 30%, #0369a1 70%, #0c4a6e 100%);
   box-shadow:
-    inset -10px -5px 25px rgba(0, 0, 0, 0.04),
-    inset 15px 15px 30px rgba(255, 255, 255, 0.8),
-    0 20px 50px rgba(6, 182, 212, 0.1),
-    0 0 100px rgba(6, 182, 212, 0.05);
+    inset -10px -5px 25px rgba(0, 0, 0, 0.8),
+    inset 15px 15px 30px rgba(255, 255, 255, 0.2),
+    0 20px 50px rgba(6, 182, 212, 0.25),
+    0 0 100px rgba(6, 182, 212, 0.1);
 }
 
 /* Floating micro-animation */
@@ -97,4 +112,213 @@ body {
 }
 .animate-float-slow {
   animation: float 6s ease-in-out infinite;
+}
+
+/* Animated Dash for connection map lines */
+@keyframes dash {
+  to {
+    stroke-dashoffset: -40;
+  }
+}
+.stroke-dasharray {
+  stroke-dasharray: 8 4;
+}
+.animate-dash {
+  animation: dash 2s linear infinite;
+}
+
+/* Orbit satellite rotations */
+@keyframes spin-leo {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+@keyframes spin-meo {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+@keyframes spin-geo {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+.animate-orbit-leo {
+  animation: spin-leo 12s linear infinite;
+}
+.animate-orbit-meo {
+  animation: spin-meo 22s linear infinite;
+}
+.animate-orbit-geo {
+  animation: spin-geo 32s linear infinite;
+}
+.animate-spin-slow {
+  animation: spin-leo 45s linear infinite;
+}
+
+/* Pulse effects */
+@keyframes pulse-ring {
+  0% { transform: scale(0.95); opacity: 0.5; }
+  50% { transform: scale(1.05); opacity: 0.8; }
+  100% { transform: scale(0.95); opacity: 0.5; }
+}
+.pulse-ring-slow {
+  animation: pulse-ring 4s ease-in-out infinite;
+}
+
+/* Typography Scale-up overrides for improved readability */
+.text-\[10px\] {
+  font-size: 14px !important;
+}
+.text-\[11px\] {
+  font-size: 15px !important;
+}
+.text-xs {
+  font-size: 0.95rem !important; /* ~15.2px */
+}
+.text-sm {
+  font-size: 1.1rem !important; /* ~17.6px */
+}
+.text-base {
+  font-size: 1.25rem !important; /* ~20px */
+}
+.text-lg {
+  font-size: 1.4rem !important; /* ~22.4px */
+}
+.text-xl {
+  font-size: 1.55rem !important; /* ~24.8px */
+}
+.text-2xl {
+  font-size: 1.85rem !important; /* ~29.6px */
+}
+.text-3xl {
+  font-size: 2.3rem !important; /* ~36.8px */
+}
+.text-4xl {
+  font-size: 3rem !important; /* ~48px */
+}
+.text-5xl {
+  font-size: 3.75rem !important; /* ~60px */
+}
+.text-6xl {
+  font-size: 4.5rem !important; /* ~72px */
+}
+.text-7xl {
+  font-size: 5.5rem !important; /* ~88px */
+}
+.text-8xl {
+  font-size: 6.5rem !important; /* ~104px */
+}
+
+/* Line height & letter spacing luxury refinements */
+p {
+  line-height: 1.8 !important;
+  letter-spacing: -0.01em !important;
+}
+
+/* Premium Luxury Card Elements */
+.premium-card {
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.5), rgba(10, 15, 30, 0.3));
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 
+    0 15px 35px -15px rgba(0, 0, 0, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.premium-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(234, 179, 8, 0.25);
+  box-shadow: 
+    0 30px 60px -20px rgba(0, 0, 0, 0.6),
+    0 0 30px -5px rgba(234, 179, 8, 0.05),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+/* Nebulae Spotlights */
+.spotlight-cyan {
+  background: radial-gradient(circle at center, rgba(6, 182, 212, 0.15) 0%, transparent 70%);
+  filter: blur(50px);
+}
+
+.spotlight-indigo {
+  background: radial-gradient(circle at center, rgba(99, 102, 241, 0.12) 0%, transparent 70%);
+  filter: blur(50px);
+}
+
+.spotlight-gold {
+  background: radial-gradient(circle at center, rgba(234, 179, 8, 0.1) 0%, transparent 70%);
+  filter: blur(50px);
+}
+
+/* Shine effect on buttons */
+.glow-btn {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.glow-btn::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -50%;
+  width: 200%;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.25) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: skewX(-25deg);
+  transition: 0.75s;
+  opacity: 0;
+}
+.glow-btn:hover::after {
+  left: 125%;
+  opacity: 1;
+}
+
+/* Make all grid cards inside our sections look extremely premium and luxurious */
+#business .grid > div,
+#infrastructure .grid > div,
+#services .grid > div,
+#roadmap .grid > div,
+#orbits .grid > div,
+#mining .grid > div {
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.6), rgba(8, 12, 24, 0.45)) !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  box-shadow: 
+    0 20px 40px -15px rgba(0, 0, 0, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05) !important;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+#business .grid > div:hover,
+#infrastructure .grid > div:hover,
+#services .grid > div:hover,
+#roadmap .grid > div:hover,
+#orbits .grid > div:hover,
+#mining .grid > div:hover {
+  transform: translateY(-6px) !important;
+  border-color: rgba(6, 182, 212, 0.3) !important;
+  box-shadow: 
+    0 35px 70px -20px rgba(6, 182, 212, 0.15),
+    0 0 30px -5px rgba(6, 182, 212, 0.04),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Gold highlighting for specific luxury cards */
+.gold-hover:hover {
+  border-color: rgba(234, 179, 8, 0.35) !important;
+  box-shadow: 
+    0 35px 70px -20px rgba(234, 179, 8, 0.12),
+    0 0 30px -5px rgba(234, 179, 8, 0.04),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Button & Nav link transitions */
+#contact a, #about a, nav a {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
 }
