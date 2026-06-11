@@ -74,13 +74,13 @@ const Navbar = () => {
   }, [])
 
   const links = [
+    { label: 'Giới thiệu', href: '#video' },
     { label: 'Về chúng tôi', href: '#about' },
     { label: 'Lĩnh vực', href: '#business' },
-    { label: 'Quỹ đạo & Vệ tinh', href: '#orbits' },
-    { label: 'Công nghệ Thăm dò', href: '#mining' },
-    { label: 'Hạ tầng & Cảng vũ trụ', href: '#infrastructure' },
+    { label: 'Công nghệ', href: '#orbits' },
+    { label: 'Hạ tầng', href: '#infrastructure' },
     { label: 'Dịch vụ', href: '#services' },
-    { label: 'Mạng lưới & Lộ trình', href: '#roadmap' },
+    { label: 'Lộ trình', href: '#roadmap' },
   ]
 
   return (
@@ -183,15 +183,15 @@ const Hero = () => (
 
           {/* Title */}
           <h1 className="font-black tracking-tight text-white leading-none mb-6">
-            <span className="block text-7xl md:text-8xl lg:text-[100px] leading-tight font-extrabold font-mono text-white">CMC</span>
-            <span className="block text-7xl md:text-8xl lg:text-[100px] leading-none gradient-text font-black uppercase">SpaceY</span>
-            <span className="block text-base md:text-lg font-bold text-amber-500 mt-4 tracking-[0.3em] uppercase">
+            <span className="block text-7xl md:text-8xl lg:text-[100px] leading-tight font-extrabold text-white serif-display">CMC</span>
+            <span className="block text-7xl md:text-8xl lg:text-[100px] leading-none gradient-text font-black serif-display">SpaceY</span>
+            <span className="block text-base md:text-lg font-bold text-amber-500 mt-4 tracking-[0.3em] uppercase" style={{ fontFamily: "'Be Vietnam Pro', sans-serif" }}>
               Group JSC.
             </span>
           </h1>
 
           {/* Tagline */}
-          <p className="text-2xl md:text-3xl text-slate-200 font-semibold mb-5 leading-snug">
+          <p className="text-2xl md:text-3xl text-slate-200 font-semibold mb-5 leading-snug serif-italic">
             Khai phóng tiềm năng không gian Việt Nam
           </p>
           <p className="text-slate-400 text-base md:text-lg max-w-xl mb-12 leading-relaxed font-medium">
@@ -281,6 +281,55 @@ const Stats = () => {
               </div>
             )
           })}
+        </div>
+      </div>
+    </section>
+  )
+}
+
+// ─── Video Showcase (Cinematic brand film with YouTube embed) ─────────────────
+const VideoShowcase = () => {
+  const ref = useFadeIn()
+  return (
+    <section id="video" className="py-32 bg-slate-950 relative overflow-hidden">
+      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[700px] h-[700px] spotlight-gold opacity-30 pointer-events-none" />
+      <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] spotlight-indigo opacity-20 pointer-events-none" />
+
+      <div ref={ref} className="fade-section max-w-5xl mx-auto px-6 relative z-10">
+        <div className="text-center mb-16">
+          <div className="text-amber-500 text-xs font-bold uppercase tracking-[0.25em] mb-4">Thước phim giới thiệu</div>
+          <h2 className="text-4xl md:text-5xl font-black text-white mb-2">
+            Hành trình <span className="gradient-text">Chinh phục Không gian</span>
+          </h2>
+          <div className="gold-divider" />
+          <p className="text-slate-400 max-w-2xl mx-auto text-sm leading-relaxed font-semibold mt-6">
+            Khám phá tầm nhìn, năng lực công nghệ và khát vọng vươn tầm vũ trụ của CMC SpaceY qua thước phim chính thức của tập đoàn.
+          </p>
+        </div>
+
+        <div className="video-frame">
+          <div className="video-frame-inner">
+            <iframe
+              src="https://www.youtube.com/embed/Wxcxq05tKiA?rel=0"
+              title="CMC SpaceY Group JSC. — Phim giới thiệu tập đoàn"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerPolicy="strict-origin-when-cross-origin"
+              allowFullScreen
+            />
+          </div>
+        </div>
+
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-8 mt-10 text-center">
+          {[
+            { label: 'Tầm nhìn 2045', desc: 'Tập đoàn không gian hàng đầu khu vực' },
+            { label: '100% Việt Nam', desc: 'Tự chủ công nghệ và dòng vốn' },
+            { label: 'Hệ sinh thái số', desc: 'Vệ tinh · AI · Dữ liệu · Tài chính' },
+          ].map((item, i) => (
+            <div key={i} className="flex flex-col items-center">
+              <span className="text-amber-400 font-extrabold text-sm serif-display">{item.label}</span>
+              <span className="text-slate-500 text-xs font-semibold mt-1">{item.desc}</span>
+            </div>
+          ))}
         </div>
       </div>
     </section>
@@ -1662,6 +1711,7 @@ export default function App() {
       <Navbar />
       <Hero />
       <Stats />
+      <VideoShowcase />
       <About />
       <VisionMission />
       <BusinessAreas />
@@ -1669,8 +1719,8 @@ export default function App() {
       <SubterraneanMining />
       <Infrastructure />
       <Services />
-      <InternationalNetwork />
       <Roadmap />
+      <InternationalNetwork />
       <StrategicValue />
       <Principles />
       <Vision2040 />
