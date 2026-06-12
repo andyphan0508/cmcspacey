@@ -83,7 +83,7 @@ const Navbar = () => {
     <nav className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${scrolled ? 'bg-black/80 backdrop-blur-md border-b border-white/8 py-4' : 'bg-transparent py-6'}`}>
       <div className="w-full px-6 lg:px-10 flex items-center justify-between gap-10">
         <a href="#" className="flex items-center flex-shrink-0 group">
-          <img src="/images/logo-wordmark-line.svg" alt="CMC SpaceY"
+          <img src="/images/logo-line.png" alt="CMC SpaceY"
             className="logo-knockout h-5 md:h-6 w-auto object-contain" />
         </a>
 
@@ -145,7 +145,7 @@ const Hero = () => {
             </div>
 
             <h1 className="mb-10">
-              <img src="/images/logo-wordmark.svg" alt="CMC SpaceY Group JSC."
+              <img src="/images/logo-full.png" alt="CMC SpaceY Group JSC."
                 className="logo-knockout w-full max-w-[340px] md:max-w-[460px] lg:max-w-[520px] h-auto" />
             </h1>
 
@@ -1146,7 +1146,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-14">
           <div>
             <div className="inline-flex bg-white rounded-xl px-4 py-2.5 mb-5">
-              <img src="/images/logo-wordmark.svg" alt="CMC SpaceY Group JSC."
+              <img src="/images/logo-full.png" alt="CMC SpaceY Group JSC."
                 className="h-12 w-auto object-contain" />
             </div>
             <p className="text-white/45 text-xs leading-relaxed mb-3">
