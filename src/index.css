@@ -8,367 +8,183 @@
 }
 
 body {
-  font-family: 'Be Vietnam Pro', sans-serif;
-  background-color: #030712;
-  color: #f1f5f9;
+  font-family: 'Inter', sans-serif;
+  font-weight: 300;
+  background-color: #050505;
+  color: #f0f0f0;
   overflow-x: hidden;
 }
 
-h1, h2, h3 {
-  font-family: 'Playfair Display', 'Be Vietnam Pro', serif;
-  letter-spacing: 0 !important;
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Montserrat', 'Inter', sans-serif;
+  letter-spacing: 0.01em;
 }
 
-h4, h5, h6 {
-  font-family: 'Be Vietnam Pro', sans-serif;
-  letter-spacing: -0.01em !important;
-}
+strong { font-weight: 500; }
 
-/* Luxury serif accents */
-.serif-display {
-  font-family: 'Playfair Display', serif !important;
-}
-.serif-italic {
-  font-family: 'Playfair Display', serif !important;
-  font-style: italic;
-}
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #0a0a0a; }
+::-webkit-scrollbar-thumb { background: #222; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #333; }
 
-/* Custom scrollbar - Premium dark theme styling */
-::-webkit-scrollbar {
-  width: 8px;
-}
-::-webkit-scrollbar-track {
-  background: #0b0f19;
-}
-::-webkit-scrollbar-thumb {
-  background: #1f2937;
-  border-radius: 4px;
-  border: 2px solid #0b0f19;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: #374151;
-}
-
-/* Glassmorphism styling - Sleek Dark Glass */
-.glass-panel {
-  background: rgba(10, 15, 30, 0.45);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.07);
-  box-shadow: 
-    0 15px 35px -15px rgba(0, 0, 0, 0.5),
-    inset 0 1px 0 rgba(255, 255, 255, 0.05);
-}
-
-.glass-panel-hover {
-  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-}
-.glass-panel-hover:hover {
-  background: rgba(15, 23, 42, 0.65);
-  border-color: rgba(6, 182, 212, 0.3);
-  transform: translateY(-4px);
-  box-shadow: 
-    0 25px 50px -20px rgba(6, 182, 212, 0.2),
-    0 0 30px rgba(6, 182, 212, 0.04);
-}
-
-/* Glowing utilities optimized for Dark Mode */
-.glow-cyan {
-  box-shadow: 0 0 40px rgba(6, 182, 212, 0.12);
-}
-.glow-gold {
-  box-shadow: 0 0 40px rgba(234, 179, 8, 0.1);
-}
-.glow-indigo {
-  box-shadow: 0 0 40px rgba(99, 102, 241, 0.12);
-}
-
-/* Section fade-in animation */
+/* Section fade-in */
 .fade-section {
   opacity: 0;
-  transform: translateY(24px);
-  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: translateY(20px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
 }
 .fade-section.visible {
   opacity: 1;
   transform: translateY(0);
 }
 
-/* Gradient text — champagne gold luxury */
+/* Gradient text — white to light grey (subtle) */
 .gradient-text {
-  background: linear-gradient(120deg, #f7e7b9 0%, #e9c46a 35%, #d4af37 65%, #9a7728 100%);
+  background: linear-gradient(120deg, #ffffff 0%, #aaaaaa 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
-.gradient-text-gold {
-  background: linear-gradient(135deg, #fef08a, #eab308, #ca8a04);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+/* Hairline accent — used sparingly */
+.accent-line {
+  width: 48px;
+  height: 1px;
+  background: rgba(255,255,255,0.3);
+  margin: 1rem auto 0;
+}
+.accent-line-left {
+  width: 48px;
+  height: 1px;
+  background: rgba(255,255,255,0.3);
+  margin: 1rem 0 0;
 }
 
-/* Glowing Space Orb representing satellite/planet theme in dark mode */
+/* CTA button — white fill, black text */
+.glow-btn {
+  position: relative;
+  overflow: hidden;
+  background: #ffffff !important;
+  color: #050505 !important;
+  border: none !important;
+  transition: background 0.25s ease, box-shadow 0.25s ease;
+}
+.glow-btn:hover {
+  background: #e8e8e8 !important;
+  box-shadow: 0 8px 32px rgba(255,255,255,0.12) !important;
+}
+
+/* Secondary button */
+.btn-outline {
+  border: 1px solid rgba(255,255,255,0.15);
+  color: #f0f0f0;
+  background: transparent;
+  transition: border-color 0.25s ease, background 0.25s ease;
+}
+.btn-outline:hover {
+  border-color: rgba(255,255,255,0.4);
+  background: rgba(255,255,255,0.04);
+}
+
+/* Cards */
+.card-dark {
+  background: #0d0d0d;
+  border: 1px solid rgba(255,255,255,0.07);
+  transition: border-color 0.25s ease, transform 0.25s ease;
+}
+.card-dark:hover {
+  border-color: rgba(255,255,255,0.18);
+  transform: translateY(-3px);
+}
+
+/* Glass panel */
+.glass-panel {
+  background: rgba(12, 12, 12, 0.7);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+/* Nebula spots — very subtle */
+.spotlight-white {
+  background: radial-gradient(circle at center, rgba(255,255,255,0.04) 0%, transparent 70%);
+  filter: blur(60px);
+}
+
+/* Neutral small accent color — used only for labels/tags */
+.accent-gold { color: rgba(255,255,255,0.55); }
+
+/* Planet orb */
 .planet {
-  background: radial-gradient(circle at 35% 35%, #ffffff 0%, #38bdf8 30%, #0369a1 70%, #0c4a6e 100%);
+  background: radial-gradient(circle at 35% 35%, #e0e0e0 0%, #888 50%, #333 100%);
   box-shadow:
-    inset -10px -5px 25px rgba(0, 0, 0, 0.8),
-    inset 15px 15px 30px rgba(255, 255, 255, 0.2),
-    0 20px 50px rgba(6, 182, 212, 0.25),
-    0 0 100px rgba(6, 182, 212, 0.1);
+    inset -8px -4px 20px rgba(0,0,0,0.7),
+    inset 10px 10px 25px rgba(255,255,255,0.12),
+    0 16px 48px rgba(255,255,255,0.06);
 }
 
-/* Floating micro-animation */
+/* Float animation */
 @keyframes float {
   0%, 100% { transform: translateY(0px); }
   50% { transform: translateY(-10px); }
 }
-.animate-float-slow {
-  animation: float 6s ease-in-out infinite;
-}
+.animate-float-slow { animation: float 6s ease-in-out infinite; }
 
-/* Animated Dash for connection map lines */
-@keyframes dash {
-  to {
-    stroke-dashoffset: -40;
-  }
-}
-.stroke-dasharray {
-  stroke-dasharray: 8 4;
-}
-.animate-dash {
-  animation: dash 2s linear infinite;
-}
-
-/* Orbit satellite rotations */
+/* Orbit lines */
 @keyframes spin-leo {
   from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  to   { transform: rotate(360deg); }
 }
-@keyframes spin-meo {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
-@keyframes spin-geo {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
-.animate-orbit-leo {
-  animation: spin-leo 12s linear infinite;
-}
-.animate-orbit-meo {
-  animation: spin-meo 22s linear infinite;
-}
-.animate-orbit-geo {
-  animation: spin-geo 32s linear infinite;
-}
-.animate-spin-slow {
-  animation: spin-leo 45s linear infinite;
-}
+.animate-orbit-leo { animation: spin-leo 12s linear infinite; }
+.animate-orbit-meo { animation: spin-leo 22s linear infinite; }
+.animate-orbit-geo { animation: spin-leo 40s linear infinite; }
+.animate-spin-slow  { animation: spin-leo 50s linear infinite; }
 
-/* Pulse effects */
+/* Dash animation for SVG lines */
+@keyframes dash { to { stroke-dashoffset: -40; } }
+.stroke-dasharray { stroke-dasharray: 8 4; }
+.animate-dash { animation: dash 2s linear infinite; }
+
+/* Pulse ring */
 @keyframes pulse-ring {
-  0% { transform: scale(0.95); opacity: 0.5; }
-  50% { transform: scale(1.05); opacity: 0.8; }
-  100% { transform: scale(0.95); opacity: 0.5; }
+  0%   { transform: scale(0.95); opacity: 0.4; }
+  50%  { transform: scale(1.05); opacity: 0.7; }
+  100% { transform: scale(0.95); opacity: 0.4; }
 }
-.pulse-ring-slow {
-  animation: pulse-ring 4s ease-in-out infinite;
-}
+.pulse-ring-slow { animation: pulse-ring 4s ease-in-out infinite; }
 
-/* Typography Scale-up overrides for improved readability */
-.text-\[10px\] {
-  font-size: 14px !important;
-}
-.text-\[11px\] {
-  font-size: 15px !important;
-}
-.text-xs {
-  font-size: 0.95rem !important; /* ~15.2px */
-}
-.text-sm {
-  font-size: 1.1rem !important; /* ~17.6px */
-}
-.text-base {
-  font-size: 1.25rem !important; /* ~20px */
-}
-.text-lg {
-  font-size: 1.4rem !important; /* ~22.4px */
-}
-.text-xl {
-  font-size: 1.55rem !important; /* ~24.8px */
-}
-.text-2xl {
-  font-size: 1.85rem !important; /* ~29.6px */
-}
-.text-3xl {
-  font-size: 2.3rem !important; /* ~36.8px */
-}
-.text-4xl {
-  font-size: 3rem !important; /* ~48px */
-}
-.text-5xl {
-  font-size: 3.75rem !important; /* ~60px */
-}
-.text-6xl {
-  font-size: 4.5rem !important; /* ~72px */
-}
-.text-7xl {
-  font-size: 5.5rem !important; /* ~88px */
-}
-.text-8xl {
-  font-size: 6.5rem !important; /* ~104px */
-}
+/* Typography scale */
+.text-\[10px\] { font-size: 11px !important; }
+.text-\[11px\] { font-size: 12px !important; }
+.text-xs   { font-size: 0.8rem !important; }
+.text-sm   { font-size: 0.9rem !important; }
+.text-base { font-size: 1rem !important; }
+.text-lg   { font-size: 1.125rem !important; }
+.text-xl   { font-size: 1.25rem !important; }
+.text-2xl  { font-size: 1.5rem !important; }
+.text-3xl  { font-size: 2rem !important; }
+.text-4xl  { font-size: 2.5rem !important; }
+.text-5xl  { font-size: 3.25rem !important; }
+.text-6xl  { font-size: 4rem !important; }
+.text-7xl  { font-size: 5rem !important; }
+.text-8xl  { font-size: 6rem !important; }
 
-/* Line height & letter spacing luxury refinements */
-p {
-  line-height: 1.8 !important;
-  letter-spacing: -0.01em !important;
-}
+p { line-height: 1.75 !important; }
 
-/* Premium Luxury Card Elements */
-.premium-card {
-  background: linear-gradient(135deg, rgba(15, 23, 42, 0.5), rgba(10, 15, 30, 0.3));
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: 
-    0 15px 35px -15px rgba(0, 0, 0, 0.4),
-    inset 0 1px 0 rgba(255, 255, 255, 0.05);
-  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.premium-card:hover {
-  transform: translateY(-6px);
-  border-color: rgba(234, 179, 8, 0.25);
-  box-shadow: 
-    0 30px 60px -20px rgba(0, 0, 0, 0.6),
-    0 0 30px -5px rgba(234, 179, 8, 0.05),
-    inset 0 1px 0 rgba(255, 255, 255, 0.1);
-}
-
-/* Nebulae Spotlights */
-.spotlight-cyan {
-  background: radial-gradient(circle at center, rgba(6, 182, 212, 0.15) 0%, transparent 70%);
-  filter: blur(50px);
-}
-
-.spotlight-indigo {
-  background: radial-gradient(circle at center, rgba(99, 102, 241, 0.12) 0%, transparent 70%);
-  filter: blur(50px);
-}
-
-.spotlight-gold {
-  background: radial-gradient(circle at center, rgba(234, 179, 8, 0.1) 0%, transparent 70%);
-  filter: blur(50px);
-}
-
-/* Shine effect on buttons — champagne gold metallic finish */
-.glow-btn {
-  position: relative;
-  overflow: hidden;
-  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-  background: linear-gradient(120deg, #d8b25a 0%, #f3dfa0 45%, #c39a3e 100%) !important;
-  color: #1a1305 !important;
-  border-color: rgba(247, 231, 185, 0.45) !important;
-  text-shadow: none;
-}
-.glow-btn:hover {
-  box-shadow: 0 12px 40px -8px rgba(212, 175, 55, 0.45) !important;
-}
-.glow-btn::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -50%;
-  width: 200%;
-  height: 100%;
-  background: linear-gradient(
-    to right,
-    rgba(255, 255, 255, 0) 0%,
-    rgba(255, 255, 255, 0.25) 50%,
-    rgba(255, 255, 255, 0) 100%
-  );
-  transform: skewX(-25deg);
-  transition: 0.75s;
-  opacity: 0;
-}
-.glow-btn:hover::after {
-  left: 125%;
-  opacity: 1;
-}
-
-/* Make all grid cards inside our sections look extremely premium and luxurious */
-#business .grid > div,
-#infrastructure .grid > div,
-#services .grid > div,
-#roadmap .grid > div,
-#orbits .grid > div,
-#mining .grid > div {
-  background: linear-gradient(135deg, rgba(15, 23, 42, 0.6), rgba(8, 12, 24, 0.45)) !important;
-  backdrop-filter: blur(20px) !important;
-  -webkit-backdrop-filter: blur(20px) !important;
-  border: 1px solid rgba(255, 255, 255, 0.08) !important;
-  box-shadow: 
-    0 20px 40px -15px rgba(0, 0, 0, 0.5),
-    inset 0 1px 0 rgba(255, 255, 255, 0.05) !important;
-  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
-}
-
-#business .grid > div:hover,
-#infrastructure .grid > div:hover,
-#services .grid > div:hover,
-#roadmap .grid > div:hover,
-#orbits .grid > div:hover,
-#mining .grid > div:hover {
-  transform: translateY(-6px) !important;
-  border-color: rgba(6, 182, 212, 0.3) !important;
-  box-shadow: 
-    0 35px 70px -20px rgba(6, 182, 212, 0.15),
-    0 0 30px -5px rgba(6, 182, 212, 0.04),
-    inset 0 1px 0 rgba(255, 255, 255, 0.1) !important;
-}
-
-/* Gold highlighting for specific luxury cards */
-.gold-hover:hover {
-  border-color: rgba(234, 179, 8, 0.35) !important;
-  box-shadow: 
-    0 35px 70px -20px rgba(234, 179, 8, 0.12),
-    0 0 30px -5px rgba(234, 179, 8, 0.04),
-    inset 0 1px 0 rgba(255, 255, 255, 0.1) !important;
-}
-
-/* Button & Nav link transitions */
-#contact a, #about a, nav a {
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
-}
-
-/* Luxury gold hairline divider under section headings */
-.gold-divider {
-  width: 72px;
-  height: 2px;
-  margin: 1.25rem auto 0;
-  background: linear-gradient(90deg, transparent, #d4af37, transparent);
-}
-
-/* Cinematic video frame */
+/* Video embed */
 .video-frame {
-  position: relative;
-  border-radius: 1.5rem;
+  border-radius: 1rem;
   padding: 1px;
-  background: linear-gradient(135deg, rgba(212, 175, 55, 0.55), rgba(255, 255, 255, 0.08) 40%, rgba(212, 175, 55, 0.35));
-  box-shadow:
-    0 40px 90px -30px rgba(0, 0, 0, 0.8),
-    0 0 60px -10px rgba(212, 175, 55, 0.18);
+  background: rgba(255,255,255,0.1);
+  box-shadow: 0 32px 80px -20px rgba(0,0,0,0.8);
 }
 .video-frame-inner {
   position: relative;
   width: 100%;
   padding-top: 56.25%;
-  border-radius: 1.5rem;
+  border-radius: 1rem;
   overflow: hidden;
-  background: #02040a;
+  background: #000;
 }
 .video-frame-inner iframe {
   position: absolute;
@@ -377,3 +193,40 @@ p {
   height: 100%;
   border: 0;
 }
+
+/* Section divider */
+.section-divider {
+  width: 100%;
+  height: 1px;
+  background: rgba(255,255,255,0.06);
+}
+
+/* Section labels — quiet, wide-tracked, monochrome */
+.label-tag {
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.45);
+}
+
+/* Contact form */
+.input-dark {
+  width: 100%;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 0.75rem;
+  padding: 0.8rem 1rem;
+  font-size: 0.85rem;
+  font-weight: 300;
+  color: #f0f0f0;
+  outline: none;
+  transition: border-color 0.25s ease, background 0.25s ease;
+}
+.input-dark::placeholder { color: rgba(255,255,255,0.3); }
+.input-dark:focus {
+  border-color: rgba(255,255,255,0.4);
+  background: rgba(255,255,255,0.05);
+}
+select.input-dark { appearance: none; }
+select.input-dark option { background: #0d0d0d; color: #f0f0f0; }
