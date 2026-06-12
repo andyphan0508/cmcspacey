@@ -172,6 +172,12 @@ footer.bg-black { background: #03060d; }
 .text-keep-white { color: #ffffff !important; }
 .text-keep-white-dim { color: rgba(255, 255, 255, 0.65) !important; }
 
+/* White knockout version of the brand wordmark — for dark backgrounds */
+.logo-knockout {
+  filter: brightness(0) invert(1);
+  opacity: 0.96;
+}
+
 /* Planet orb */
 .planet {
   background: radial-gradient(circle at 35% 35%, #e0e0e0 0%, #888 50%, #333 100%);

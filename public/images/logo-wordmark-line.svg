@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1160 150">
+  <g fill="none" stroke="#1b2a5e" stroke-width="22" stroke-linejoin="round" stroke-linecap="butt">
+    <!-- C -->
+    <path d="M104 32 H48 Q31 32 31 49 V101 Q31 118 48 118 H104" />
+    <!-- M -->
+    <path d="M142 118 V36 L191 96 L240 36 V118" />
+    <!-- C -->
+    <path d="M349 32 H293 Q276 32 276 49 V101 Q276 118 293 118 H349" />
+    <!-- S -->
+    <path d="M497 32 H436 Q422 32 422 46 V61 Q422 75 436 75 H483 Q497 75 497 89 V104 Q497 118 483 118 H422" />
+    <!-- P -->
+    <path d="M534 118 V32 H597 Q611 32 611 46 V64 Q611 78 597 78 H534" />
+    <!-- A (open bottom) -->
+    <path d="M642 118 L695 32 L748 118" />
+    <!-- C -->
+    <path d="M858 32 H802 Q785 32 785 49 V101 Q785 118 802 118 H858" />
+    <!-- E -->
+    <path d="M965 32 H895 V118 H965 M895 75 H947" />
+    <!-- Y left arm + stem -->
+    <path d="M987 36 L1037 92 V118" />
+  </g>
+  <!-- A inner blue triangle -->
+  <path d="M677 118 L713 118 L695 86 Z" fill="#1287e8" />
+  <!-- Y right arm — grey swoosh -->
+  <path d="M992 134 C 1056 122 1104 80 1138 12 C 1100 70 1052 108 986 124 Z" fill="#97999c" />
+</svg>
