@@ -111,8 +111,66 @@ strong { font-weight: 500; }
   filter: blur(60px);
 }
 
-/* Neutral small accent color — used only for labels/tags */
-.accent-gold { color: rgba(255,255,255,0.55); }
+/* Brand-blue small accent color — used only for labels/tags */
+.accent-gold { color: #8fb4e8; }
+
+/* ── Dark sections — black-to-navy gradient (matches logo navy) ─────────── */
+section.bg-black {
+  background:
+    radial-gradient(ellipse 90% 70% at 50% 0%, rgba(28, 62, 130, 0.18), transparent 62%),
+    #03060d;
+}
+section.bg-\[\#050505\] {
+  background:
+    radial-gradient(ellipse 90% 70% at 50% 100%, rgba(28, 62, 130, 0.15), transparent 62%),
+    #04070f;
+}
+footer.bg-black { background: #03060d; }
+
+/* ── Light theme sections — white with navy ink, alternating rhythm ─────── */
+.theme-light { background: linear-gradient(180deg, #ffffff 0%, #eef2f9 100%); }
+.theme-light .text-white,
+.theme-light .hover\:text-white:hover { color: #0c1f4a !important; }
+.theme-light [class*="text-white/5"],
+.theme-light [class*="text-white/6"],
+.theme-light [class*="text-white/7"] { color: rgba(15, 32, 70, 0.7) !important; }
+.theme-light [class*="text-white/3"],
+.theme-light [class*="text-white/4"] { color: rgba(15, 32, 70, 0.52) !important; }
+.theme-light .text-white\/5 { color: rgba(15, 32, 70, 0.07) !important; }
+.theme-light [class*="border-white"] { border-color: rgba(15, 32, 70, 0.12) !important; }
+.theme-light [class*="divide-white"] > * { border-color: rgba(15, 32, 70, 0.1) !important; }
+.theme-light [class*="bg-white/"] { background-color: rgba(15, 32, 70, 0.045) !important; }
+.theme-light .bg-white { background-color: #0c1f4a !important; }
+.theme-light .text-black { color: #ffffff !important; }
+.theme-light .card-dark {
+  background: #ffffff;
+  border-color: rgba(15, 32, 70, 0.09);
+  box-shadow: 0 14px 44px -20px rgba(15, 32, 70, 0.22);
+}
+.theme-light .card-dark:hover { border-color: rgba(15, 32, 70, 0.28); }
+.theme-light .label-tag { color: rgba(35, 88, 175, 0.8); }
+.theme-light .accent-gold { color: #2563ad; }
+.theme-light .accent-line,
+.theme-light .accent-line-left { background: rgba(35, 88, 175, 0.5); }
+.theme-light .glow-btn { background: #0c1f4a !important; color: #ffffff !important; }
+.theme-light .glow-btn:hover {
+  background: #16356f !important;
+  box-shadow: 0 8px 32px rgba(15, 32, 70, 0.25) !important;
+}
+.theme-light .btn-outline { border-color: rgba(15, 32, 70, 0.25); color: #0c1f4a; }
+.theme-light .btn-outline:hover { border-color: rgba(15, 32, 70, 0.5); background: rgba(15, 32, 70, 0.04); }
+.theme-light .input-dark {
+  background: #ffffff;
+  border-color: rgba(15, 32, 70, 0.16);
+  color: #0c1f4a;
+}
+.theme-light .input-dark::placeholder { color: rgba(15, 32, 70, 0.35); }
+.theme-light .input-dark:focus { border-color: #2563ad; background: #ffffff; }
+.theme-light select.input-dark option { background: #ffffff; color: #0c1f4a; }
+
+/* Text pinned on photos inside light sections must stay white */
+.text-keep-white { color: #ffffff !important; }
+.text-keep-white-dim { color: rgba(255, 255, 255, 0.65) !important; }
 
 /* Planet orb */
 .planet {
@@ -153,18 +211,18 @@ strong { font-weight: 500; }
 }
 .pulse-ring-slow { animation: pulse-ring 4s ease-in-out infinite; }
 
-/* Typography scale */
-.text-\[10px\] { font-size: 11px !important; }
-.text-\[11px\] { font-size: 12px !important; }
-.text-xs   { font-size: 0.8rem !important; }
-.text-sm   { font-size: 0.9rem !important; }
-.text-base { font-size: 1rem !important; }
-.text-lg   { font-size: 1.125rem !important; }
-.text-xl   { font-size: 1.25rem !important; }
-.text-2xl  { font-size: 1.5rem !important; }
-.text-3xl  { font-size: 2rem !important; }
-.text-4xl  { font-size: 2.5rem !important; }
-.text-5xl  { font-size: 3.25rem !important; }
+/* Typography scale — sized up for comfortable reading */
+.text-\[10px\] { font-size: 12.5px !important; }
+.text-\[11px\] { font-size: 13px !important; }
+.text-xs   { font-size: 0.9rem !important; }
+.text-sm   { font-size: 1rem !important; }
+.text-base { font-size: 1.125rem !important; }
+.text-lg   { font-size: 1.25rem !important; }
+.text-xl   { font-size: 1.375rem !important; }
+.text-2xl  { font-size: 1.625rem !important; }
+.text-3xl  { font-size: 2.125rem !important; }
+.text-4xl  { font-size: 2.625rem !important; }
+.text-5xl  { font-size: 3.375rem !important; }
 .text-6xl  { font-size: 4rem !important; }
 .text-7xl  { font-size: 5rem !important; }
 .text-8xl  { font-size: 6rem !important; }

@@ -66,13 +66,10 @@ const Navbar = () => {
   return (
     <nav className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${scrolled ? 'bg-black/80 backdrop-blur-md border-b border-white/8 py-4' : 'bg-transparent py-6'}`}>
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
-        <a href="#" className="flex items-center gap-3 group">
-          <div className="w-9 h-9 rounded-lg bg-white flex items-center justify-center">
-            <Satellite className="w-4.5 h-4.5 text-black" />
-          </div>
-          <div className="leading-none">
-            <div className="text-white font-medium text-sm tracking-tight">CMC SpaceY</div>
-            <div className="accent-gold text-[10px] font-medium tracking-widest uppercase mt-0.5">Group JSC.</div>
+        <a href="#" className="flex items-center group">
+          <div className="bg-white rounded-xl px-2.5 py-1 flex items-center shadow-lg shadow-black/20">
+            <img src="/images/logo.svg" alt="CMC SpaceY Group JSC."
+              className="h-14 w-auto object-contain" />
           </div>
         </a>
 
@@ -192,7 +189,7 @@ const Stats = () => {
     { value: '2045', label: 'Tầm nhìn chiến lược', icon: Target },
   ]
   return (
-    <section className="border-y border-white/6 bg-[#050505]">
+    <section className="theme-light border-y border-white/6">
       <div className="max-w-7xl mx-auto px-6 py-14">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:divide-x md:divide-white/5">
           {items.map((item, i) => {
@@ -270,7 +267,7 @@ const About = () => {
   ]
 
   return (
-    <section id="about" className="py-32 bg-[#050505] relative">
+    <section id="about" className="theme-light py-32 relative">
       <div ref={ref} className="fade-section max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
@@ -312,8 +309,8 @@ const About = () => {
                 className="w-full h-48 object-cover group-hover:scale-[1.03] transition-transform duration-500" />
               <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent flex items-end p-5">
                 <div>
-                  <p className="text-white font-medium text-sm">Mô hình Trung tâm R&D CMC SpaceY</p>
-                  <p className="text-white/50 text-xs">Nghiên cứu & điều hành vệ tinh</p>
+                  <p className="text-keep-white font-medium text-sm">Mô hình Trung tâm R&D CMC SpaceY</p>
+                  <p className="text-keep-white-dim text-xs">Nghiên cứu & điều hành vệ tinh</p>
                 </div>
               </div>
             </div>
@@ -393,7 +390,7 @@ const BusinessAreas = () => {
   ]
 
   return (
-    <section id="business" className="py-32 bg-[#050505]">
+    <section id="business" className="theme-light py-32">
       <div ref={ref} className="fade-section max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
           <p className="label-tag mb-4">Lĩnh vực hoạt động</p>
@@ -580,7 +577,7 @@ const SubterraneanMining = () => {
   ]
 
   return (
-    <section id="mining" className="py-32 bg-[#050505]">
+    <section id="mining" className="theme-light py-32">
       <div ref={ref} className="fade-section max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
           <p className="label-tag mb-4">Công nghệ vượt trội</p>
@@ -796,7 +793,7 @@ const Services = () => {
   ]
 
   return (
-    <section id="services" className="py-32 bg-[#050505]">
+    <section id="services" className="theme-light py-32">
       <div ref={ref} className="fade-section max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
           <p className="label-tag mb-4">Dịch vụ ứng dụng</p>
@@ -955,7 +952,7 @@ const StrategicValue = () => {
   ]
 
   return (
-    <section className="py-32 bg-black">
+    <section className="theme-light py-32">
       <div ref={ref} className="fade-section max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
           <p className="label-tag mb-4">Tác động chiến lược</p>
@@ -1119,7 +1116,7 @@ const ContactCTA = () => {
   }
 
   return (
-    <section id="contact" className="py-32 bg-[#050505]">
+    <section id="contact" className="theme-light py-32">
       <div ref={ref} className="fade-section max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
 
@@ -1210,14 +1207,9 @@ const Footer = () => (
     <div className="max-w-7xl mx-auto px-6">
       <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-14">
         <div>
-          <div className="flex items-center gap-3 mb-5">
-            <div className="w-8 h-8 rounded-lg bg-white flex items-center justify-center">
-              <Satellite className="w-4 h-4 text-black" />
-            </div>
-            <div>
-              <div className="text-white font-medium text-sm">CMC SpaceY</div>
-              <div className="accent-gold text-[10px] font-medium tracking-widest uppercase">Group JSC.</div>
-            </div>
+          <div className="inline-flex bg-white rounded-xl px-3 py-1.5 mb-5">
+            <img src="/images/logo.svg" alt="CMC SpaceY Group JSC."
+              className="h-20 w-auto object-contain" />
           </div>
           <p className="text-white/45 text-xs leading-relaxed mb-3">
             Tập đoàn Công nghệ Không gian — Vệ tinh — Dữ liệu — AI — Tài chính số 100% vốn Việt Nam.
