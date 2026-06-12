@@ -1062,13 +1062,14 @@ const CONTACT_EMAIL = 'contact_hk@cmcspacey.com'
 const ContactCTA = () => {
   const ref = useFadeIn()
   const [form, setForm] = useState({ name: '', email: '', org: '', topic: 'Hợp tác đầu tư', message: '' })
-  const [sent, setSent] = useState(false)
+  const [status, setStatus] = useState('idle') // idle | sending | sent | fallback
 
   const handleChange = e => setForm(f => ({ ...f, [e.target.name]: e.target.value }))
 
-  const handleSubmit = e => {
-    e.preventDefault()
-    const subject = `[CMC SpaceY] ${form.topic} — ${form.name}${form.org ? ` (${form.org})` : ''}`
+  const buildSubject = () =>
+    `[CMC SpaceY] ${form.topic} — ${form.name}${form.org ? ` (${form.org})` : ''}`
+
+  const openMailFallback = () => {
     const body = [
       'THÔNG TIN LIÊN HỆ — CMC SPACEY GROUP JSC.',
       '==========================================',
@@ -1085,8 +1086,36 @@ const ContactCTA = () => {
       '==========================================',
       'Email được gửi từ form liên hệ chính thức tại www.cmcspacey.com',
     ].join('\n')
-    window.location.href = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
-    setSent(true)
+    window.location.href = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(buildSubject())}&body=${encodeURIComponent(body)}`
+    setStatus('fallback')
+  }
+
+  const handleSubmit = async e => {
+    e.preventDefault()
+    setStatus('sending')
+    try {
+      const res = await fetch(`https://formsubmit.co/ajax/${CONTACT_EMAIL}`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({
+          'Họ và tên': form.name,
+          'Email liên hệ': form.email,
+          'Đơn vị / Tổ chức': form.org || '(Không cung cấp)',
+          'Lĩnh vực quan tâm': form.topic,
+          'Nội dung': form.message,
+          _subject: buildSubject(),
+          _replyto: form.email,
+          _template: 'table',
+          _captcha: 'false',
+        }),
+      })
+      const data = await res.json()
+      if (!res.ok || data.success === 'false' || data.success === false) throw new Error('send failed')
+      setStatus('sent')
+      setForm({ name: '', email: '', org: '', topic: 'Hợp tác đầu tư', message: '' })
+    } catch {
+      openMailFallback()
+    }
   }
 
   return (
@@ -1152,13 +1181,18 @@ const ContactCTA = () => {
               <textarea id="ct-message" name="message" required rows={5} value={form.message} onChange={handleChange}
                 className="input-dark resize-none" placeholder="Mô tả ngắn gọn nhu cầu hợp tác của bạn…" />
             </div>
-            <button type="submit"
-              className="glow-btn group w-full flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-full font-medium text-sm">
-              Gửi thông tin liên hệ
-              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            <button type="submit" disabled={status === 'sending'}
+              className="glow-btn group w-full flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-full font-medium text-sm disabled:opacity-60 disabled:cursor-wait">
+              {status === 'sending' ? 'Đang gửi…' : 'Gửi thông tin liên hệ'}
+              {status !== 'sending' && <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />}
             </button>
-            {sent && (
-              <p className="text-white/50 text-xs text-center mt-4 leading-relaxed">
+            {status === 'sent' && (
+              <p className="text-white/60 text-xs text-center mt-4 leading-relaxed">
+                Cảm ơn bạn! Thông tin đã được gửi tới {CONTACT_EMAIL}. Chúng tôi sẽ phản hồi trong thời gian sớm nhất.
+              </p>
+            )}
+            {status === 'fallback' && (
+              <p className="text-white/60 text-xs text-center mt-4 leading-relaxed">
                 Ứng dụng email của bạn đã được mở với nội dung điền sẵn — vui lòng bấm gửi để hoàn tất liên hệ tới {CONTACT_EMAIL}.
               </p>
             )}
