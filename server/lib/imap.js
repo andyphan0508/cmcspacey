@@ -11,7 +11,7 @@ export async function verifyImapLogin(email, password) {
     greetingTimeout: 10000,
     connectionTimeout: 10000,
   })
-
+  client.on('error', () => {})
   try {
     await client.connect()
     await client.logout()
@@ -19,5 +19,7 @@ export async function verifyImapLogin(email, password) {
   } catch (err) {
     if (err && err.authenticationFailed) return { status: 'auth' }
     return { status: 'connect' }
+  } finally {
+    try { await client.close() } catch {}
   }
 }

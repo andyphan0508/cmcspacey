@@ -1,4 +1,4 @@
-import 'dotenv/config'
+import '../env.js'
 import { verifyImapLogin } from '../lib/imap.js'
 
 const [, , email, password] = process.argv
