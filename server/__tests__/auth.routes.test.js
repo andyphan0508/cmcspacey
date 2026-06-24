@@ -56,4 +56,15 @@ describe('auth routes', () => {
     const res = await request(app).get('/api/me')
     expect(res.status).toBe(401)
   })
+
+  it('clears the session cookie on logout', async () => {
+    const app = await freshApp()
+    const res = await request(app).post('/api/logout')
+    expect(res.status).toBe(200)
+    expect(res.body).toEqual({ ok: true })
+    const cookie = res.headers['set-cookie']?.[0] || ''
+    // clearCookie sets an expiry in the past / Max-Age=0
+    expect(cookie).toMatch(/session=/)
+    expect(cookie.toLowerCase()).toMatch(/expires=|max-age=0/)
+  })
 })

@@ -22,15 +22,17 @@ router.post('/login', async (req, res) => {
   const result = await verifyImapLogin(email, password)
   if (result.status === 'auth') return res.status(401).json({ error: 'invalid_credentials' })
   if (result.status === 'connect') return res.status(503).json({ error: 'mail_unreachable' })
+  if (result.status !== 'ok') return res.status(500).json({ error: 'unexpected_status' })
 
-  const user = upsertUserOnLogin(email)
+  const user = await upsertUserOnLogin(email)
   const token = signSession(user)
   res.cookie('session', token, COOKIE_OPTS)
   res.json({ email: user.email, display_name: user.display_name, role: user.role })
 })
 
 router.post('/logout', (_req, res) => {
-  res.clearCookie('session')
+  const { maxAge, ...CLEAR_OPTS } = COOKIE_OPTS
+  res.clearCookie('session', CLEAR_OPTS)
   res.json({ ok: true })
 })
 
