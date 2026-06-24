@@ -60,3 +60,7 @@ pids
 # Claude/Gemini tools or local config
 .claude/
 .gemini/
+
+# SQLite local database
+server/*.sqlite
+server/*.sqlite-journal
