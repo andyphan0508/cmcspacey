@@ -295,11 +295,30 @@ export default {
     infoTitle: '集团信息',
     info: [
       { label: '总部', value: '越南' },
-      { label: '合作邮箱', value: 'contact_hk@cmcspacey.com' },
+      { label: '合作邮箱', value: 'contact@cmcspacey.com' },
       { label: '基础设施投资', value: '胡志明市高科技园区与头顿' },
       { label: '所有制结构', value: '100%越南资本' },
       { label: '业务领域', value: '太空 · 数据 · 数字经济' },
     ],
     rights: '© 2026 CMC SpaceY Group JSC. 版权所有。',
+  },
+  auth: {
+    title: '登录',
+    email: '邮箱',
+    password: '密码',
+    signIn: '登录',
+    signingIn: '登录中…',
+    errors: {
+      invalid_credentials: '邮箱或密码错误',
+      mail_unreachable: '无法连接邮件服务器，请稍后重试',
+      unknown: '发生错误，请稍后重试',
+    },
+  },
+  dash: {
+    logout: '退出登录',
+    comingSoon: '功能开发中',
+    noPermission: '您无权访问此部分',
+    nav: { home: '主页', mail: '邮箱', hr: '人事' },
+    home: { welcome: '欢迎使用控制台' },
   },
 }

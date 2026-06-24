@@ -295,11 +295,30 @@ export default {
     infoTitle: 'Thông tin tập đoàn',
     info: [
       { label: 'Trụ sở chính', value: 'Việt Nam' },
-      { label: 'Email hợp tác', value: 'contact_hk@cmcspacey.com' },
+      { label: 'Email hợp tác', value: 'contact@cmcspacey.com' },
       { label: 'Đầu tư hạ tầng', value: 'Khu CNC TP. Hồ Chí Minh & Vũng Tàu' },
       { label: 'Cơ cấu sở hữu', value: '100% dòng vốn Việt Nam' },
       { label: 'Lĩnh vực', value: 'Không gian · Dữ liệu · Kinh tế số' },
     ],
     rights: '© 2026 CMC SpaceY Group JSC. All rights reserved.',
+  },
+  auth: {
+    title: 'Đăng nhập',
+    email: 'Email',
+    password: 'Mật khẩu',
+    signIn: 'Đăng nhập',
+    signingIn: 'Đang đăng nhập…',
+    errors: {
+      invalid_credentials: 'Sai email hoặc mật khẩu',
+      mail_unreachable: 'Không kết nối được máy chủ mail, thử lại sau',
+      unknown: 'Có lỗi xảy ra, thử lại sau',
+    },
+  },
+  dash: {
+    logout: 'Đăng xuất',
+    comingSoon: 'Tính năng đang phát triển',
+    noPermission: 'Bạn không có quyền truy cập mục này',
+    nav: { home: 'Trang chủ', mail: 'Hộp thư', hr: 'Nhân sự' },
+    home: { welcome: 'Chào mừng đến với bảng điều khiển' },
   },
 }

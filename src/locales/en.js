@@ -295,11 +295,30 @@ export default {
     infoTitle: 'Company information',
     info: [
       { label: 'Headquarters', value: 'Vietnam' },
-      { label: 'Partnership email', value: 'contact_hk@cmcspacey.com' },
+      { label: 'Partnership email', value: 'contact@cmcspacey.com' },
       { label: 'Infrastructure investment', value: 'Saigon Hi-Tech Park, HCMC & Vung Tau' },
       { label: 'Ownership structure', value: '100% Vietnamese capital' },
       { label: 'Sectors', value: 'Space · Data · Digital economy' },
     ],
     rights: '© 2026 CMC SpaceY Group JSC. All rights reserved.',
+  },
+  auth: {
+    title: 'Sign in',
+    email: 'Email',
+    password: 'Password',
+    signIn: 'Sign in',
+    signingIn: 'Signing in…',
+    errors: {
+      invalid_credentials: 'Incorrect email or password',
+      mail_unreachable: 'Cannot reach mail server, please try again later',
+      unknown: 'Something went wrong, please try again',
+    },
+  },
+  dash: {
+    logout: 'Sign out',
+    comingSoon: 'Feature under development',
+    noPermission: 'You do not have access to this section',
+    nav: { home: 'Home', mail: 'Mailbox', hr: 'HR' },
+    home: { welcome: 'Welcome to the dashboard' },
   },
 }
