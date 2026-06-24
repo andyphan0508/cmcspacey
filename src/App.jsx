@@ -990,7 +990,7 @@ const Vision2045 = () => {
 }
 
 // ─── Contact ──────────────────────────────────────────────────────────────────
-const CONTACT_EMAIL = 'contact_hk@cmcspacey.com'
+const CONTACT_EMAIL = 'contact@cmcspacey.com'
 
 const ContactCTA = () => {
   const { t } = useTranslation()
