@@ -31,8 +31,9 @@ export default function Login() {
         <h1 className="text-xl font-semibold text-gray-900">{t('auth.title')}</h1>
         {error && <p className="rounded bg-red-50 px-3 py-2 text-sm text-red-700">{error}</p>}
         <div className="space-y-1">
-          <label className="text-sm text-gray-700">{t('auth.email')}</label>
+          <label htmlFor="email" className="text-sm text-gray-700">{t('auth.email')}</label>
           <input
+            id="email"
             type="email"
             autoComplete="username"
             required
@@ -42,8 +43,9 @@ export default function Login() {
           />
         </div>
         <div className="space-y-1">
-          <label className="text-sm text-gray-700">{t('auth.password')}</label>
+          <label htmlFor="password" className="text-sm text-gray-700">{t('auth.password')}</label>
           <input
+            id="password"
             type="password"
             autoComplete="current-password"
             required

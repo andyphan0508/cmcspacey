@@ -46,7 +46,11 @@ export function AuthProvider({ children }) {
   }, [])
 
   const logout = useCallback(async () => {
-    await api('/logout', { method: 'POST' })
+    try {
+      await api('/logout', { method: 'POST' })
+    } catch {
+      // ignore network errors — still clear local session
+    }
     setUser(null)
   }, [])
 
