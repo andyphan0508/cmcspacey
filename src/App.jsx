@@ -48,6 +48,7 @@ const LANGS = [
   { code: 'vi', label: 'VI' },
   { code: 'en', label: 'EN' },
   { code: 'zh', label: '中文' },
+  { code: 'ru', label: 'RU' },
 ]
 
 const LangSwitch = ({ className = '' }) => {
